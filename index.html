@@ -133,6 +133,21 @@ p {
   font-size: 1.3rem;
 }
 
+.slideshow {
+  display: none;
+  margin-top: 25px;
+}
+
+.foto-slide {
+  width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 5px solid white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease;
+}
+
   </style>
 </head>
 <body>  <div class="container">
@@ -141,21 +156,13 @@ p {
   Putar Lagu 🎵
 </button>
 
-<button class="btn" onclick="showMessage()">Klik Surprise 🎁</button>
+<button class="btn" onclick="showSurprise()">Klik Surprise 🎁</button>
 
-<div class="message" id="message">
-  <div class="scroll-text">
-  <p>
-    HBD Cantikkk🥳💞🥰😙<br><br>
-    Semoga sehat selalu, panjang umur, di limpahkan rezekinya seperti air sungai yang mengalir deras, di lancarkan segala urusannya, di permudah jalannya, pokonya doa terbaik yaa sayang💞🥰 aminn🤲🏻💞🥰
-    <br><br>
-    Maaf yaa abang cuma bisa ngucapin dan ngedoain aja, belum bisa ngasih apa\"😔💞🥰
-    <br><br>
-    Tetap jadi bunga matahari paling cantik yang selalu bikin hari-hari abang jadi lebih indah 🌻💛
-  </p>
-  </div>
+<div class="slideshow" id="slideshow">
+  <img id="slide" src="foto1.jpg" class="foto-slide">
 </div>
 
+  </div>
   </div>  <audio id="music" loop>
     <source src="musik.mp3" type="audio/mp3">
   </audio>  <script>
@@ -163,8 +170,22 @@ p {
       document.getElementById('music').play();
     }
 
-    function showMessage() {
-      document.getElementById('message').style.display = 'block';
+    const photos = [
+      'foto1.jpg',
+      'foto2.jpg',
+      'foto3.jpg',
+      'foto4.jpg'
+    ];
+
+    let currentPhoto = 0;
+
+    function showSurprise() {
+      document.getElementById('slideshow').style.display = 'block';
+
+      setInterval(() => {
+        currentPhoto = (currentPhoto + 1) % photos.length;
+        document.getElementById('slide').src = photos[currentPhoto];
+      }, 2500);
     }
 
     function createSunflower() {
