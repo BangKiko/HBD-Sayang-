@@ -159,19 +159,23 @@ p {
 </div>
 
 <script>
-let foto = [
-  "foto1.jpg",
-  "foto2.jpg",
-  "foto3.jpg",
-  "foto4.jpg"
-];
+window.onload = function () {
 
-let index = 0;
+  let foto = [
+    "foto1.jpg",
+    "foto2.jpg",
+    "foto3.jpg",
+    "foto4.jpg"
+  ];
 
-setInterval(() => {
-  index = (index + 1) % foto.length;
-  document.getElementById("slideFoto").src = foto[index];
-}, 3000); // ganti setiap 3 detik
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % foto.length;
+    document.getElementById("slideFoto").src = foto[index];
+  }, 3000);
+
+};
 </script>
 
 <button onclick="playMusic()" class="btn">
