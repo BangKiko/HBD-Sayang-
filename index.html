@@ -138,7 +138,6 @@ p {
 <body>  <div class="container">
     <h1>🌻 Happy Birthday 🌻</h1>
     <h2>MUNADIA ANNUR HUSNA</h2>
-
 <div class="message" id="message">
   <div class="scroll-text">
   <p>
@@ -172,7 +171,7 @@ let index = 0;
 setInterval(() => {
   index = (index + 1) % foto.length;
   document.getElementById("slideFoto").src = foto[index];
-}, 2000); // ganti setiap 2 detik
+}, 3000); // ganti setiap 3 detik
 </script>
 
 <button onclick="playMusic()" class="btn">
@@ -207,13 +206,7 @@ setInterval(() => {
       }, 7000);
     }
 
-    setInterval(createSunflower, 500);
-  </script>  <iframe width="0" height="0" 
-    src="https://www.youtube.com/embed/ziXnK8bo6t8?autoplay=1&loop=1&playlist=ziXnK8bo6t8" 
-    title="Selamat Ulang Tahun Jamrud"
-    frameborder="0"
-    allow="autoplay"
-    allowfullscreen>
-  </iframe>
+    setInterval(createSunflower, 1500);
+  </script>  
 </body>
 </html>
