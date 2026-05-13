@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Munadia Annur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  background: linear-gradient(135deg, #ffe066, #ffd43b, #fff3bf);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #5c3d00;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 40px 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #7a5200;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  background: #ffcc00;
+  color: #5c3d00;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #ffd000;
+}
+
+.message {
+  display: none;
+  animation: fadeIn 2s ease;
+}
+
+.sunflower {
+  position: absolute;
+  font-size: 50px;
+  animation: float 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heart {
+  color: #ff4d6d;
+  font-size: 1.3rem;
+}
+
+  </style>
+</head>
+<body>  <div class="container">
+    <h1>🌻 Happy Birthday 🌻</h1>
+    <h2>MUNADIA ANNUR HUSNA</h2><button class="btn" onclick="showMessage()">Klik Surprise 🎁</button>
+
+<div class="message" id="message">
+  <p>
+    HBD Cantikkk🥳💞🥰😙<br><br>
+    Semoga sehat selalu, panjang umur, di limpahkan rezekinya seperti air sungai yang mengalir deras, di lancarkan segala urusannya, di permudah jalannya, pokonya doa terbaik yaa sayang💞🥰 aminn🤲🏻💞🥰
+    <br><br>
+    Maaf yaa abang cuma bisa ngucapin dan ngedoain aja, belum bisa ngasih apa\"😔💞🥰
+    <br><br>
+    Tetap jadi bunga matahari paling cantik yang selalu bikin hari-hari abang jadi lebih indah 🌻💛
+  </p>
+</div>
+
+  </div>  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+
+    function createSunflower() {
+      const flower = document.createElement('div');
+      flower.classList.add('sunflower');
+      flower.innerHTML = '🌻';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      flower.style.fontSize = (Math.random() * 30 + 30) + 'px';
+
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 7000);
+    }
+
+    setInterval(createSunflower, 500);
+  </script></body>
+</html>
