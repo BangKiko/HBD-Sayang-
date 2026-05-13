@@ -151,6 +151,27 @@ p {
   </p>
   </div>
 </div>
+  <div style="text-align:center; margin-top:20px;">
+  <img id="slideFoto"
+    src="foto1.jpg"
+    style="width:220px; height:220px; object-fit:cover; border-radius:20px; box-shadow:0 0 15px rgba(0,0,0,0.2);">
+</div>
+
+<script>
+let foto = [
+  "foto1.jpg",
+  "foto2.jpg",
+  "foto3.jpg",
+  "foto4.jpg"
+];
+
+let index = 0;
+
+setInterval(() => {
+  index = (index + 1) % foto.length;
+  document.getElementById("slideFoto").src = foto[index];
+}, 2000); // ganti setiap 2 detik
+</script>
 
 <button onclick="playMusic()" class="btn">
   Putar Lagu 🎵
