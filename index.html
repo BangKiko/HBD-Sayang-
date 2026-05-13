@@ -73,6 +73,18 @@ p {
 .message {
   display: none;
   animation: fadeIn 2s ease;
+  margin-top: 25px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 20px;
+  padding: 20px;
+  max-height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-text {
+  display: inline-block;
+  animation: scrollUp 15s linear infinite;
 }
 
 .sunflower {
@@ -102,6 +114,20 @@ p {
   }
 }
 
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .heart {
   color: #ff4d6d;
   font-size: 1.3rem;
@@ -111,9 +137,14 @@ p {
 </head>
 <body>  <div class="container">
     <h1>🌻 Happy Birthday 🌻</h1>
-    <h2>MUNADIA ANNUR HUSNA</h2><button class="btn" onclick="showMessage()">Klik Surprise 🎁</button>
+    <h2>MUNADIA ANNUR HUSNA</h2><button onclick="playMusic()" class="btn">
+  Putar Lagu 🎵
+</button>
+
+<button class="btn" onclick="showMessage()">Klik Surprise 🎁</button>
 
 <div class="message" id="message">
+  <div class="scroll-text">
   <p>
     HBD Cantikkk🥳💞🥰😙<br><br>
     Semoga sehat selalu, panjang umur, di limpahkan rezekinya seperti air sungai yang mengalir deras, di lancarkan segala urusannya, di permudah jalannya, pokonya doa terbaik yaa sayang💞🥰 aminn🤲🏻💞🥰
@@ -122,9 +153,16 @@ p {
     <br><br>
     Tetap jadi bunga matahari paling cantik yang selalu bikin hari-hari abang jadi lebih indah 🌻💛
   </p>
+  </div>
 </div>
 
-  </div>  <script>
+  </div>  <audio id="music" loop>
+    <source src="musik.mp3" type="audio/mp3">
+  </audio>  <script>
+    function playMusic() {
+      document.getElementById('music').play();
+    }
+
     function showMessage() {
       document.getElementById('message').style.display = 'block';
     }
@@ -152,20 +190,5 @@ p {
     allow="autoplay"
     allowfullscreen>
   </iframe>
-  
-<button onclick="playMusic()" class="btn">
-  Putar Lagu 🎵
-</button>
-
-<audio id="music" loop>
-  <source src="musik.mp3" type="audio/mp3">
-</audio>
-
-<script>
-function playMusic() {
-  document.getElementById('music').play();
-}
-</script>
-  
 </body>
 </html>
